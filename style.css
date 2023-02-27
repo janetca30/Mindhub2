@@ -1,0 +1,550 @@
+* {
+    background-color: dodgerblue;
+}
+
+.navbar>.container-fluid {
+    height: 72px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+
+}
+
+.nav-link {
+    color: #c23e6a;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #c23e6a;
+    padding: 8px;
+    height: 35px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+
+.sdesliz {
+    background-color: #c23e6a;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2,
+.bi1,
+.bi2 {
+    background-color: #c23e6a;
+}
+
+.arrow {
+    color: black;
+}
+
+.d-flex {
+    padding-top: 20px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form-control {
+    width: 300px;
+    background-color: dodgerblue;
+    border: 2px solid #c23e6a;
+    color: #c23e6a;
+}
+
+.list-category {
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-pink {
+    color: #c23e6a;
+    border: 2px solid #c23e6a;
+    font-weight: bold;
+}
+
+.card-img-top {
+    box-shadow: inset -10px -10px 0 rgb(51, 50, 50);
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:18px;
+}
+
+.card {
+    width: 250px;
+    margin: 30px;
+    border: 2px solid black;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.card-footer {
+    background-color: dodgerblue;
+    border-top: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.mas {
+    border: 2px solid black;
+}
+
+/*modal*/
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 108px;
+    margin-bottom: 110px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.modal-content {
+    background-color: dodgerblue;
+    flex-direction: row;
+    border: 2px solid black;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.modal-body {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.modal-title {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.modal-header {
+    border-right: 2px solid black;
+    border-bottom: none;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    border: 2px solid black;
+}
+
+footer {
+    height: 60px;
+}
+
+.lista-redes {
+    background-color: #c23e6a;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.redes {
+    background-color: #c23e6a;
+    border: none;
+
+}
+
+h4 {
+    background-color: #c23e6a;
+    margin-right: 100px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.bii,
+.bif,
+.biw {
+    color: black;
+    background-color: #c23e6a;
+}
+
+.scontact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.fcontact {
+    width: 500px;
+    height: 457px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+    color: #c23e6a;
+    font-weight: bold;
+}
+
+.sstats {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tstats {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.psub {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+}
+
+.table1,
+.table2,
+.table3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: cornflowerblue;
+}
+
+.t1th1,
+.t2th1,
+.t3th1 {
+    width: 390px;
+}
+
+.t1th2,
+.t2th2,
+.t3th2 {
+    width: 390px;
+}
+
+.t1th3,
+.t2th3,
+.t3th3 {
+    width: 320px;
+}
+
+@media (min-width: 320px) and (max-width: 424.98px) {
+    .navbar>.container-fluid {
+        height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .list-category {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center;
+    }
+    .form-control{
+        width: 250px;
+    }
+    /*modal*/
+    .modal-dialog{
+        width: 300px;
+        height: 280px;
+        margin-left: 10px;
+    }
+    .modal-content{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .card-img-top {
+        width: 246px;
+    }
+    .modal-header{
+        flex-direction: column;
+        width: 300px;
+        border: 2px solid black;
+    }
+    .modal-body{
+        width: 300px;
+        border: 2px solid black;
+    }
+    .tstats{
+        width: 320px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 575.98px) {
+    .navbar>.container-fluid {
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lista {
+        height: 80px;
+        align-content: space-between;
+    }
+
+    .list-category {
+        width: 300px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /*modal*/
+    .modal-dialog{
+        width: 425px;
+        height: 350px;
+        margin-left: 10px;
+    }
+    .modal-content{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .modal-header{
+        flex-direction: column;
+        width: 400px;
+        border: 2px solid black;
+    }
+    .modal-body{
+        width: 400px;
+        border: 2px solid black;
+    }
+    .tstats{
+        width: 420px;
+    }
+}
+@media (min-width: 576px) and (max-width: 639.98px) {
+    .navbar>.container-fluid {
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lista {
+        height: 80px;
+        align-content: space-between;
+    }
+
+    .list-category {
+        width: 300px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /*modal*/
+    .modal-dialog{
+        width: 570px;
+        height: 400px;
+        margin-left: 10px;
+    }
+    .modal-content{
+        width: 510px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .modal-header{
+        flex-direction: column;
+        width: 510px;
+        border: 2px solid black;
+    }
+    .modal-body{
+        width: 510px;
+        border: 2px solid black;
+    }
+    .tstats{
+        width: 570px;
+    }
+}
+@media (min-width: 640px) and (max-width: 991.98px) {
+    .navbar>.container-fluid {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lista {
+        height: 40px;
+    }
+
+    .list-category {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /*modal*/
+    .modal-dialog{
+        width: 640px;
+        height: 500px;
+        margin-left: 10px;
+    }
+    .modal-content{
+        width: 620px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 120px;
+        
+    }
+    
+    .modal-header{
+        flex-direction: column;
+        width: 620px;
+        border: 2px solid black;
+    }
+    .modal-body{
+        width: 620px;
+        border: 2px solid black;
+    }
+    .tstats{
+        width: 640px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .modal-dialog{
+        width: 990px;
+        margin-left: 10px;
+    }
+    .modal-body{
+        width: 340px;
+    }
+    .modal-content{
+        margin-left: 50px;
+    }
+    .tstats{
+        width: 990px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .d-flex{
+        padding-top: 30px;
+    }
+    .card-list{
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+    .modal-dialog{
+        width: 990px;
+        margin-left: 100px;
+        margin-bottom: 180px;
+    }
+    .fcontact{
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    .tstats{
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+}
