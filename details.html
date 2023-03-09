@@ -1,61 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>c-home</title>
+    <title>Details</title>
 </head>
+
 <body>
     <section>
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                <div class="logo">
-                    <img src="./img/Logo Amazing Events.png" alt="logo" width="150" height="40">
-                </div>
-                <div class="lista">
-                    <a class="nav-link active home" aria-current="page" href="#">Home</a>
-                    <a class="nav-link upcoming" href="./upcoming.html">Upcoming Events</a>
-                    <a class="nav-link past-events" href="./past-events.html">Past Events</a>
-                    <a class="nav-link contact" href="./contact.html">Contact</a>
-                    <a class="nav-link stats" href="./stats.html">Stats</a>
-                </div>
+                    <div class="logo">
+                        <img src="./img/Logo Amazing Events.png" alt="logo" width="150" height="40">
+                    </div>
+                    <div class="lista">
+                        <a class="nav-link active home" aria-current="page" href="#">Home</a>
+                        <a class="nav-link upcoming" href="./upcoming.html">Upcoming Events</a>
+                        <a class="nav-link past-events" href="./past-events.html">Past Events</a>
+                        <a class="nav-link contact" href="./contact.html">Contact</a>
+                        <a class="nav-link stats" href="./stats.html">Stats</a>
+                    </div>
             </div>
         </nav>
     </section>
     <section class="card-home">
-        <div class="container">
-            <div class="row c-home">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <img src="./img/books.jpg" class="card-img-top" alt="books">
-                </div>
-                <div class="col-5">
-                    <div class="close">
-                        <a href="./index.html">
-                            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bix bi-x-circle-fill" viewBox="0 0 20 20">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <h5 class="card-title">Titulo</h5>
-                    <p class="card-text">Texto descriptivo</p>
-                    <p>Date: Texto descriptivo</p>
-                    <p>Category: descriptivo</p>
-                    <p>Place:Room A</p>
-                    <p>Capacity:</p>
-                    <p>assistance:</p>
-                    <p> Price: $ 0000</p>
-                </div>
-                <div class="col-1"></div>
-            </div>
+        <div class="container bigCard" id="bigCard" >
         </div>
     </section>
-<footer>
+    <footer>
         <div class="lista-redes">
             <ul class="list-group list-group-horizontal">
                 <li class="list-group-item redes">
@@ -88,9 +67,11 @@
             </ul>
             <h4>Cohort</h4>
         </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+    </footer>
+    <script src="./script/data.js"></script>
+    <script src="./script/detail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 </body>
 </html>
