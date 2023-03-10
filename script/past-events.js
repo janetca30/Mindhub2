@@ -18,22 +18,29 @@ function printCards(){
     for (let i = 0; i < pastArray.length; i++){
         card.innerHTML += `
         <div class="col-sm-3">
-        <div class="cardPast" id="cardPast">
-            <img src="${pastArray[i].image}" class="card-img-top" alt="" id="imagen">
-            <div class="card-body">
-                <h5 class="card-title"id="titulo">${pastArray[i].name}</h5>
-                <p class="card-text" id="descripcion">${pastArray[i].description}</p>
+            <div class="cardPast" id="cardPast">
+                <div class="csmall">
+                    <img src="${pastArray[i].image}" class="card-img-top" alt="" id="imagen">
+                    <div class="card-body">
+                        <h5 class="card-title"id="titulo">${pastArray[i].name}</h5>
+                        <p class="card-text" id="descripcion">${pastArray[i].description}</p>
+                    </div>
+                    <div class="card-footer">
+                        <h6>Price: $<p id="precio">${pastArray[i].price}</p></h6>
+                        <a class="mas" href="./details.html" onclick="captureCard(this)"  data-nombre ="${pastArray[i].name}">Ver más ...</a>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-                <h6>Price: $<p id="precio">${pastArray[i].price}</p>
-                </h6>
-                <a class="mas" href="./details.html">Ver más ...</a>
-            </div>
-        </div>
         </div>
         `
     }
 
 }
-printCards(card)
+printCards()
+/*capturo el evento onclick y lo guardo en data-nombre*/
+function captureCard(nombre) {
+    var nombre = nombre.getAttribute("data-nombre");
+    
+    localStorage.setItem("Evento", nombre);    
+}
 

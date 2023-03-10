@@ -88,10 +88,6 @@ h2,
     font-weight: bold;
 }
 
-.card-list {
-    border: none;
-    
-}
 .card-img-top {
     box-shadow: inset -10px -10px 0 rgb(51, 50, 50);
     border-radius: 5px;
@@ -100,21 +96,25 @@ h2,
 
 .card, .cardUpcoming, .cardPast {
     margin: 15px;
-    margin-bottom: 60px;
-    height: 410px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     background-color: dodgerblue;
-    border: 2px solid black;
+  
 }
 
+.csmall {
+    height: 410px; 
+    border: 2px solid black;
+}
 .card-title {
     display: flex;
     justify-content: center;
 }
-
+.card-body {
+    height: 140px;
+}
 .card-footer {
     background-color: dodgerblue;
     border-top: none;
