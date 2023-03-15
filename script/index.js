@@ -1,4 +1,3 @@
-
 var data = data;
 const fechaActual = data.currentDate;
 const events = data.events;
@@ -16,7 +15,7 @@ let card = document.getElementById('cardsHome');
 function printCards(){
     for (let i = 0; i < cardArray.length; i++){
         card.innerHTML += `
-        <div class="col-sm-3">
+        <div class="col">
             <div class="card" id="cardsHome">
                 <div class="csmall">
                     <img src="${cardArray[i].image}" class="card-img-top" alt="" id="imagen">

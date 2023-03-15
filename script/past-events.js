@@ -17,7 +17,7 @@ let card = document.getElementById('cardPast')
 function printCards(){
     for (let i = 0; i < pastArray.length; i++){
         card.innerHTML += `
-        <div class="col-sm-3">
+        <div class="col">
             <div class="cardPast" id="cardPast">
                 <div class="csmall">
                     <img src="${pastArray[i].image}" class="card-img-top" alt="" id="imagen">

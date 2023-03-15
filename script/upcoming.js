@@ -17,7 +17,7 @@ let card = document.getElementById('cardUpcoming')
 function printCards(){
     for (let i = 0; i < upcomingArray.length; i++){
         card.innerHTML += `
-        <div class="col-sm-3">
+        <div class="col">
             <div class="cardUpcoming" id="cardUpcoming">
                 <div class="csmall">
                     <img src="${upcomingArray[i].image}" class="card-img-top" alt="" id="imagen">

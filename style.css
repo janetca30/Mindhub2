@@ -101,11 +101,11 @@ h2,
     flex-direction: row;
     justify-content: space-around;
     background-color: dodgerblue;
-  
 }
 
 .csmall {
-    height: 410px; 
+    width: 300px;
+    height: 420px; 
     border: 2px solid black;
 }
 .card-title {
@@ -113,7 +113,7 @@ h2,
     justify-content: center;
 }
 .card-body {
-    height: 140px;
+    height: 150px;
 }
 .card-footer {
     background-color: dodgerblue;
@@ -140,15 +140,7 @@ h2,
 
 
 /*details*/
-.hcard {
-    height: 520px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
+
 .c-home {
     height: 520px;
     display: flex;
@@ -202,7 +194,7 @@ h2,
     margin-left: 100px;
 }
 
-/*fin c-home*/
+/*fin details*/
 
 
 footer {
@@ -357,6 +349,18 @@ h4 {
     .tstats {
         width: 320px;
     }
+
+    /*details*/
+    .c-home {
+        height: 800px;
+    }
+    .imagendiv {
+        width: 320px;
+    }
+    .img-home {
+        width: 310px;
+    }
+    
 }
 
 @media (min-width: 425px) and (max-width: 575.98px) {
@@ -388,6 +392,17 @@ h4 {
     .tstats {
         width: 420px;
     }
+
+     /*details*/
+     .c-home {
+        height: 800px;
+    }
+    .imagendiv {
+        width: 425px;
+    }
+    .img-home {
+        width: 410px;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 639.98px) {
@@ -413,9 +428,14 @@ h4 {
     .tstats {
         width: 570px;
     }
+    
+    /*details*/
+    .c-home {
+        height: 800px;
+    }
 }
 
-@media (min-width: 640px) and (max-width: 991.98px) {
+@media (min-width: 640px) and (max-width: 767.98px) {
     .navbar>.container-fluid {
         height: 100px;
         display: flex;
@@ -436,11 +456,49 @@ h4 {
     .tstats {
         width: 640px;
     }
+
+    /*details*/
+    .c-home {
+        height: 800px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar>.container-fluid {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lista {
+        height: 40px;
+    }
+
+    .list-category {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tstats {
+        width: 750px;
+    }
+    
+    /*details*/
+    .c-home {
+        height: 800px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .tstats {
         width: 990px;
+    }
+
+    /*details*/
+    .c-home {
+        height: 800px;
     }
 }
 
