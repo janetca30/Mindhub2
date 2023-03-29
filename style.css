@@ -65,29 +65,50 @@ h2,
 }
 
 .form-control {
-    width: 300px;
+    width: 400px;
+    margin-top: 10px;
     background-color: dodgerblue;
-    border: 2px solid #c23e6a;
-    color: #c23e6a;
+    border: 3px solid #c23e6a;;
+    color:#c23e6a;;
 }
-
-.list-category {
-    width: 500px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.search {
+.checks{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.class_checks{
+    margin-left: 10px;
+}
+input#id_busqueda{
+    margin-right: 30px;
+}
 .btn-pink {
     color: #c23e6a;
     border: 2px solid #c23e6a;
     font-weight: bold;
 }
 
+.card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
 .card-img-top {
     box-shadow: inset -10px -10px 0 rgb(51, 50, 50);
     border-radius: 5px;
@@ -199,9 +220,10 @@ h2,
 
 footer {
     width: 100%;
-    height: 60px;
     bottom: 0;
-    position: fixed;
+    position: static;
+    display: block;
+
     
 }
 

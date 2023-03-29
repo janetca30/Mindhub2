@@ -1,42 +1,3 @@
-const events = data.events;
-const fechaActual = new Date(data.currentDate); // convertir la fecha actual a objeto Date
-const contenedor = document.getElementById('contenedor')
-
-cardList(events)
-
-function cardList(arrayDatos){
-    if(arrayDatos.length == 0){
-        contenedor.innerHTML = "<h3>No hay coincidencia</h3>"
-        return
-    }
-    let cardf = ''
-    // ordenar por fecha de menor a mayor
-    arrayDatos.sort((a, b) => new Date(a.date) - new Date(b.date)).forEach(element => {
-        // convertir la fecha del evento a objeto Date
-        const fechaEvento = new Date(element.date);
-        // verificar si la fecha del evento es mayor a la fecha actual
-        if (fechaEvento > fechaActual){
-            cardf += `
-                <div class="card" style="max-width: 18rem;" id="cardsmall">
-                    <div class="csmall">
-                        <img src="${element.image}" class="card-img-top" alt="" id="imagen">
-                        <div class="card-body">
-                            <h5 class="card-title" id="titulo">${element.name}</h5>
-                            <p class="card-text" id="descripcion">${element.description}</p>
-                        </div>
-                        <div class="card-footer">
-                            <h6>Price: $<p id="precio">${element.price}</p></h6>
-                            <a href="./details.html?name=${element.name}" class="btn">Ver más ...</a>
-                        </div>
-                    </div>
-                </div>
-            `
-        }
-    })
-    contenedor.innerHTML = cardf
-}
-
-
 function filtrarEventos(eventos, texto, categoriasSeleccionadas) {
     return eventos.filter(evento => {
     return (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(evento.category))
@@ -70,7 +31,7 @@ function captureData() {
     .map(checkbox => checkbox.getAttribute('data-category'));
     const textoBusqueda = document.querySelector('#checks-container input[type="text"]').value;
     const eventosFiltrados = filtrarEventos(eventos, textoBusqueda, categoriasSeleccionadas);
-    cardList(eventosFiltrados);
+    pintarCards(eventosFiltrados);
     
 
 }
@@ -84,3 +45,6 @@ const categoriasFiltradas = categorias.filter((category, index) => {
 });
   
 printChecksYBuscador(events, categoriasFiltradas, '#checks');
+  
+
+

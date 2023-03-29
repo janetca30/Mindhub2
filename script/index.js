@@ -1,46 +1,32 @@
-var data = data;
-const fechaActual = data.currentDate;
 const events = data.events;
-let cardArray = [];
+const contenedor = document.getElementById('contenedor');
 
-function cardList(){
-    for (let i = 0; i < events.length; i++){
-        cardArray.push(events[i])
-    }
-}
-cardList()
+pintarCards(events);
 
-let card = document.getElementById('cardsHome');
-
-function printCards(){
-    for (let i = 0; i < cardArray.length; i++){
-        card.innerHTML += `
-        <div class="col">
-            <div class="card" id="cardsHome">
-                <div class="csmall">
-                    <img src="${cardArray[i].image}" class="card-img-top" alt="" id="imagen">
-                    <div class="card-body">
-                        <h5 class="card-title"id="titulo">${cardArray[i].name}</h5>
-                        <p class="card-text" id="descripcion">${cardArray[i].description}</p>
-                    </div>
-                    <div class="card-footer">
-                        <h6>Price: $<p id="precio">${cardArray[i].price}</p></h6>
-                        <a class="mas" href="./details.html" onclick="captureCard(this)"  data-nombre ="${cardArray[i].name}">Ver más ...</a>
-                    </div>
-                </div>
-            </div>
+function pintarCards(arrayDatos) {
+  if(arrayDatos.length == 0){
+    contenedor.innerHTML = "<h3>No hay coincidencia</h3>"
+    return
+  }
+  
+  let cards = '';
+  arrayDatos.forEach(element => {
+    cards += `
+      <div class="card" style="max-width: 18rem;" id="cardsmall">
+        <div class="csmall">
+          <img src="${element.image}" class="card-img-top" alt="" id="imagen">
+          <div class="card-body">
+            <h5 class="card-title" id="titulo">${element.name}</h5>
+            <p class="card-text" id="descripcion">${element.description}</p>
+          </div>
+          <div class="card-footer">
+            <h6>Price: $<p id="precio">${element.price}</p></h6>
+            <a href="./details.html?name=${element.name}" class="btn">Ver más ...</a>
+          </div>
         </div>
-        `
-    }
+      </div>
+    `;
+  });
+  contenedor.innerHTML = cards;
 }
-printCards()
-/*capturo el evento onclick y lo guardo en data-nombre*/
-function captureCard(nombre) {
-    var nombre = nombre.getAttribute("data-nombre");
-    
-    localStorage.setItem("Evento", nombre);    
-}
-
-
-
 
