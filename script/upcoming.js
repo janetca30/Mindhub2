@@ -1,23 +1,58 @@
-const events = data.events;
-const fechaActual = new Date(data.currentDate); // convertir la fecha actual a objeto Date
-const contenedor = document.getElementById('contenedor')
+const currentData = 'https://mindhub-xj03.onrender.com/api/amazing';
+const input = document.querySelector('input');
+const containerCheck = document.getElementById('checks');
+const containerSearch = document.getElementById('contenedor');
+let arrayEvents  = [];
 
-cardList(events)
 
-function cardList(arrayDatos){
-    if(arrayDatos.length == 0){
-        contenedor.innerHTML = "<h3>No hay coincidencia</h3>"
+async function getData() {
+
+    try{
+        let response = await fetch (currentData);
+        let api = await response.json();
+
+
+        input.addEventListener('input',superFilter)
+        containerCheck.addEventListener('change',superFilter)
+
+
+
+        events = api.events
+        for (const event of api.events){
+            if(event.date>api.currentDate){
+                
+                arrayEvents.push(event)
+            }
+        }
+
+        rendersCards(arrayEvents)
+        addChecks(arrayEvents)
+
+
+        } catch (fail) {
+            console.log(fail.message);
+        }
+    }
+    console.log(arrayEvents);
+
+    getData();
+
+
+function rendersCards(array){
+    let container = document.querySelector("#contenedor");
+    if(array.length == 0){
+        container.innerHTML = "<h2 class='display-1 fw-bolder'>Not Found</h2>"
         return
     }
-    let cardf = ''
-    // ordenar por fecha de menor a mayor
-    arrayDatos.sort((a, b) => new Date(a.date) - new Date(b.date)).forEach(element => {
-        // convertir la fecha del evento a objeto Date
-        const fechaEvento = new Date(element.date);
-        // verificar si la fecha del evento es mayor a la fecha actual
-        if (fechaEvento > fechaActual){
-            cardf += `
-                <div class="card" style="max-width: 18rem;" id="cardsmall">
+
+    let htmlCards = "";
+        array.forEach(array => htmlCards += showCards(array));
+        container.innerHTML = htmlCards;
+}
+
+function showCards(element){
+        return `
+        <div class="card" style="max-width: 18rem;" id="cardsmall">
                     <div class="csmall">
                         <img src="${element.image}" class="card-img-top" alt="" id="imagen">
                         <div class="card-body">
@@ -26,61 +61,60 @@ function cardList(arrayDatos){
                         </div>
                         <div class="card-footer">
                             <h6>Price: $<p id="precio">${element.price}</p></h6>
-                            <a href="./details.html?name=${element.name}" class="btn">Ver más ...</a>
+                            <a href="./details.html?name=${element.name}" class="btn mas">Ver más ...</a>
                         </div>
                     </div>
                 </div>
-            `
+    `
+}
+
+function addChecks(array){
+    let checks = ''
+    let repeat = array.map(element => element.category)
+    let range = new Set(repeat.sort((a,b)=>{
+        if(a>b){
+            return 1
         }
+        if(a<b){
+            return -1
+        }
+        return 0
+    }))
+    range.forEach(element => {
+        checks += `
+        <fieldset>
+            <label class="contact-label" for="${element}">${element}</label>
+            <input class="class_checks contact-input" type="checkbox" value="${element}" name="categoria" id="${element}" data-category="${element}">
+        </fieldset>
+`
     })
-    contenedor.innerHTML = cardf
+    containerCheck.innerHTML = checks
 }
 
-
-function filtrarEventos(eventos, texto, categoriasSeleccionadas) {
-    return eventos.filter(evento => {
-    return (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(evento.category))
-    && evento.name.toLowerCase().includes(texto.toLowerCase());
-});
+function filterText(array, text){
+    let arrayFilter = array.filter (element => element.name.toLowerCase().includes(text.toLowerCase()))
+    return arrayFilter
 }
 
-function printChecksYBuscador(eventos, categorias, contenedor) {
-const contenedorHTML = document.querySelector(contenedor);
-contenedorHTML.id = 'checks-container';
-const checkboxesHTML = categorias.map(category => {
-    return `
-    <fieldset>
-        <label class="contact-label" for="${category}">${category}</label>
-        <input class="class_checks contact-input" type="checkbox" value="${category}" name="categoria" id="${category}" data-category="${category}">
-    </fieldset>
-    `;
-});
-const inputHTML = document.createElement('input');
-    inputHTML.type = 'text';
-    inputHTML.className = 'form-control';
-    inputHTML.placeholder = 'search';
-    inputHTML.autocomplete = 'off';
-    inputHTML.addEventListener('keyup', captureData);
-    contenedorHTML.innerHTML = checkboxesHTML.join('');
-    contenedorHTML.appendChild(inputHTML);
-
-function captureData() {
-    const categoriasSeleccionadas = Array.from(document.querySelectorAll('#checks-container input[type="checkbox"]'))
-    .filter(checkbox => checkbox.checked)
-    .map(checkbox => checkbox.getAttribute('data-category'));
-    const textoBusqueda = document.querySelector('#checks-container input[type="text"]').value;
-    const eventosFiltrados = filtrarEventos(eventos, textoBusqueda, categoriasSeleccionadas);
-    cardList(eventosFiltrados);
-    
-
+function filterCategory(array){
+    let checkBoxes = document.querySelectorAll("input[type='checkbox']")
+    console.log(checkBoxes);
+    let checks = Array.from(checkBoxes)
+    console.log(checks);
+    let checksChecked = checks.filter(check => check.checked)
+    console.log(checksChecked);
+    if(checksChecked.length == 0){
+        return array
+    }
+    let checkValues = checksChecked.map(check => check.value)
+    console.log(checkValues);
+    let arrayFilter = array.filter(element => checkValues.includes(element.category))
+    console.log(arrayFilter);
+    return arrayFilter
 }
 
-contenedorHTML.addEventListener('change', captureData);
+function superFilter(){
+    let arrayFilter = filterText(arrayEvents, input.value)
+    let arrayFilter2 = filterCategory(arrayFilter)
+    rendersCards(arrayFilter2)
 }
-  
-const categorias = events.map(event => event.category);
-const categoriasFiltradas = categorias.filter((category, index) => {
-    return categorias.indexOf(category) === index;
-});
-  
-printChecksYBuscador(events, categoriasFiltradas, '#checks');

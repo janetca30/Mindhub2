@@ -1,15 +1,25 @@
+// Obtiene los eventos desde la API
+const apiUrl = 'https://mindhub-xj03.onrender.com/api/amazing';
 
-document.addEventListener("DOMContentLoaded", function() {
-  const events = data.events;
-  
-  const queryString = location.search;
-  const params = new URLSearchParams(queryString);
-  var nombreEvento= params.get('name'); 
-  const element = events.find((element) => element.name === nombreEvento);   
- 
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    const events = data.events;
+    const queryString = location.search;
+    const params = new URLSearchParams(queryString);
+    const nombreEvento = params.get('name');
+    const event = events.find((element) => element.name === nombreEvento);
+    renderEventDetails(event, '#event-details');
+    renderFilters(events, categoriasFiltradas, '#checks');
+    renderEventCards(events);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
-  let div = document.getElementById("event-details");
-  div.innerHTML = `
+function renderEventDetails(event, selector) {
+  const element = document.querySelector(selector);
+  element.innerHTML = `
     <div class="container bigCard">
       <div class="row c-home" id="tarjeta">
         <div class="close">
@@ -19,21 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
           </a>
         </div>
         <div class="imagendiv">
-          <img src="${element.image}" class="img-home " alt="" id="imagen">
+          <img src="${event.image}" class="img-home " alt="" id="imagen">
         </div>
         <div class="contenido">
-          <h5 class="tch5" id="titulo">${element.name}</h5>
-          <h6>Date:<p id="fecha">${element.date}</p></h6>
-          <h6>Descripcion:<p id="descripcion">${element.description}</p></h6>
-          <h6>Category:<p id="categoria">${element.category}</p></h6>
-          <h6>Place:<p id="lugar">${element.place}</p></h6>
-          <h6>Capacity:<p id="capacidad">${element.capacity}</p></h6>
-          <h6>Assistance:<p id="asistencia">${element.assistance}</p></h6>
-          <h6>Price: $<p id="precio">${element.price}</p></h6>
+          <h5 class="tch5" id="titulo">${event.name}</h5>
+          <h6>Date:<p id="fecha">${event.date}</p></h6>
+          <h6>Descripcion:<p id="descripcion">${event.description}</p></h6>
+          <h6>Category:<p id="categoria">${event.category}</p></h6>
+          <h6>Place:<p id="lugar">${event.place}</p></h6>
+          <h6>Capacity:<p id="capacidad">${event.capacity}</p></h6>
+          <h6>Assistance:<p id="asistencia">${event.assistance}</p></h6>
+          <h6>Price: $<p id="precio">${event.price}</p></h6>
         </div>
       </div>
     </div>
   `;
-
 }
-); 

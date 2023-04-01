@@ -80,6 +80,12 @@ h2,
     align-items: center;
 }
 
+.events{
+    width: 65%;
+}
+
+
+
 fieldset{
     display: flex;
     flex-wrap: wrap;
@@ -110,9 +116,10 @@ input#id_busqueda{
     align-items: center;
 }
 .card-img-top {
-    box-shadow: inset -10px -10px 0 rgb(51, 50, 50);
+    box-shadow: inset -10px -10px 0 rgb(184, 84, 145);
     border-radius: 5px;
     height: 200px;
+    border-bottom: 4px solid #c23e6a;
 }
 
 .card, .cardUpcoming, .cardPast {
@@ -122,16 +129,14 @@ input#id_busqueda{
     flex-direction: row;
     justify-content: space-around;
     background-color: dodgerblue;
+    border: 4px solid #c23e6a;
 }
 
-.csmall {
-    width: 300px;
-    height: 420px; 
-    border: 2px solid black;
-}
 .card-title {
     display: flex;
     justify-content: center;
+    color: #c23e6a;
+    font-weight: bolder;
 }
 .card-body {
     height: 150px;
@@ -148,17 +153,30 @@ input#id_busqueda{
 }
 
 .mas {
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 90px;
+    border: 4px solid #c23e6a;
+    color: #c23e6a;
+    width: 110px;
     text-decoration: none;
-    color: black;
+    font-weight: bolder;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
 }
-
-
+.searchp{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+}
+.filtrosp {
+    width: 1350px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 /*details*/
 
@@ -219,12 +237,12 @@ input#id_busqueda{
 
 
 footer {
-    width: 100%;
-    bottom: 0;
-    position: static;
+    width: 100%; 
+    position: relative;
     display: block;
+    margin-bottom: 0;
+    padding-top: 15px;
 
-    
 }
 
 .lista-redes {
@@ -262,11 +280,12 @@ h4 {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    height: 445px;
 }
 
 .fcontact {
     width: 500px;
-    height: 457px;
+    height: 390px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -301,6 +320,7 @@ h4 {
     font-size: 22px;
     font-weight: bold;
     background-color: cornflowerblue;
+    color: #c23e6a;
 }
 
 .table1,
@@ -310,24 +330,28 @@ h4 {
     flex-direction: column;
     flex-wrap: wrap;
     background-color: cornflowerblue;
+    
 }
 
 .t1th1,
 .t2th1,
 .t3th1 {
     width: 390px;
+    color: #c23e6a;
 }
 
 .t1th2,
 .t2th2,
 .t3th2 {
     width: 390px;
+    color: #c23e6a;
 }
 
 .t1th3,
 .t2th3,
 .t3th3 {
     width: 320px;
+    color: #c23e6a;
 }
 
 @media (min-width: 320px) and (max-width: 424.98px) {
